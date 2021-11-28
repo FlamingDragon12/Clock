@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Analog Clock</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<!-- <script type="text/javascript" src="scrip.js"></script> -->
+</head>
+<body>
+	<div class="clock">
+		<div class="hour" >
+			<div class="hr" id="hr"></div>
+		</div>
+		<div class="minutes" >
+			<div class="min" id="min"></div>
+		</div>
+		<div class="sec" >
+			<div class="sc" id="sc"></div>
+		</div>
+		<div class="num num1">1</div>
+		<div class="num num2">2</div>
+		<div class="num num3">3</div>
+		<div class="num num4">4</div>
+		<div class="num num5">5</div>
+		<div class="num num6">9</div>
+		<div class="num num7">7</div>
+		<div class="num num8">8</div>
+	    <div class="num num9">9</div>
+	    <div class="num num10">10</div>
+	    <div class="num num11">11</div>
+	    <div class="num num12">12</div>
+	</div>
+	<script type="text/javascript">
+		const deg = 6;
+		const hr = document.querySelector('#hr');
+		const min = document.querySelector('#min');
+		const sc = document.querySelector('#sc');
+
+		setInterval(() => {
+		const day = new Date();
+		const hh = day.getHours() * 30;
+		const mm = day.getMinutes() * deg;
+		const ss = day.getSeconds() * deg;
+
+		hr.style.transform = `rotateZ(${(hh) + (mm/12)}deg)`;
+		min.style.transform = `rotateZ(${mm}deg)`;
+		sc.style.transform = `rotateZ(${ss}deg)`;
+	})
+	</script>
+	
+</body>
+</html>
